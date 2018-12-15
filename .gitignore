@@ -1,4 +1,6 @@
-api_hash
-api_id
+config.ini
+cl.session
+cl.sync
 venv/
 .idea/
+bot_token
