@@ -20,7 +20,7 @@ class SQLiteDB:
         conn = sqlite3.connect(SQLiteDB.DB_NAME)
         c = conn.cursor()
         c.execute('''
-            CREATE TABLE Messages(timestamp int, chat_id int, msg_id int, data varchar)
+            CREATE TABLE Messages(timest int, chat_id int, msg_id int, data varchar)
         ''')
         conn.commit()
         conn.close()
@@ -35,15 +35,15 @@ class SQLiteDB:
     def add_entry(self, timestamp, chat_id, message_id, data):
         c = self.conn.cursor()
         c.execute('''
-            INSERT INTO Messages(timestamp, chat_id, msg_id, data) VALUES(?, ?)
+            INSERT INTO Messages(timest, chat_id, msg_id, data) VALUES(?, ?, ?, ?)
         ''', (timestamp, chat_id, message_id, data))
         self.conn.commit()
 
     def remove_old(self, timestamp_ref):
         c = self.conn.cursor()
         c.execute('''
-            DELETE FROM Messages WHERE timestamp <= ?
-        ''', (timestamp_ref))
+            DELETE FROM Messages WHERE timest <= ?
+        ''', (timestamp_ref,))
 
     def get_all(self):
         c = self.conn.cursor()

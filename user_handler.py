@@ -19,6 +19,3 @@ class TelegramUser:
         return app
 
 
-if __name__ == '__main__':
-    t = TelegramUser()
-    import pdb; pdb.set_trace();

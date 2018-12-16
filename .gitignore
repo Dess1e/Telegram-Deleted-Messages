@@ -1,6 +1,8 @@
 config.ini
 cl.session
 cl.sync
+users.db
 venv/
 .idea/
 bot_token
+__pycache__
